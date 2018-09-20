@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class User implements Serializable {
     //用户id
     private int userId;
+
     //手机号
     private String phoneNumber;
     //密码
