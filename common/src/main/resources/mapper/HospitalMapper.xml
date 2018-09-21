@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tpkd.common.mapper.HospitalMapper" >
+  <resultMap id="BaseResultMap" type="com.tpkd.common.pojo.Hospital" >
+    <id column="hospitalId" property="hospitalId" jdbcType="INTEGER" />
+    <result column="hospitalName" property="hospitalName" jdbcType="VARCHAR" />
+    <result column="hospitalLevel" property="hospitalLevel" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="introduce" property="introduce" jdbcType="VARCHAR" />
+    <result column="departmentId" property="departmentId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    hospitalId, hospitalName, hospitalLevel, address, introduce, departmentId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from hospital
+    where hospitalId = #{hospitalId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from hospital
+    where hospitalId = #{hospitalId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tpkd.common.pojo.Hospital" >
+    insert into hospital (hospitalId, hospitalName, hospitalLevel, 
+      address, introduce, departmentId
+      )
+    values (#{hospitalId,jdbcType=INTEGER}, #{hospitalName,jdbcType=VARCHAR}, #{hospitalLevel,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR}, #{departmentId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tpkd.common.pojo.Hospital" >
+    insert into hospital
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="hospitalId != null" >
+        hospitalId,
+      </if>
+      <if test="hospitalName != null" >
+        hospitalName,
+      </if>
+      <if test="hospitalLevel != null" >
+        hospitalLevel,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="introduce != null" >
+        introduce,
+      </if>
+      <if test="departmentId != null" >
+        departmentId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="hospitalId != null" >
+        #{hospitalId,jdbcType=INTEGER},
+      </if>
+      <if test="hospitalName != null" >
+        #{hospitalName,jdbcType=VARCHAR},
+      </if>
+      <if test="hospitalLevel != null" >
+        #{hospitalLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null" >
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+        #{departmentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tpkd.common.pojo.Hospital" >
+    update hospital
+    <set >
+      <if test="hospitalName != null" >
+        hospitalName = #{hospitalName,jdbcType=VARCHAR},
+      </if>
+      <if test="hospitalLevel != null" >
+        hospitalLevel = #{hospitalLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null" >
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+        departmentId = #{departmentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where hospitalId = #{hospitalId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tpkd.common.pojo.Hospital" >
+    update hospital
+    set hospitalName = #{hospitalName,jdbcType=VARCHAR},
+      hospitalLevel = #{hospitalLevel,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      introduce = #{introduce,jdbcType=VARCHAR},
+      departmentId = #{departmentId,jdbcType=VARCHAR}
+    where hospitalId = #{hospitalId,jdbcType=INTEGER}
+  </update>
+</mapper>

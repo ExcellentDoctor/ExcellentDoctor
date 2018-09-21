@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tpkd.common.mapper.AnswerMapper" >
+  <resultMap id="BaseResultMap" type="com.tpkd.common.pojo.Answer" >
+    <id column="answerId" property="answerId" jdbcType="INTEGER" />
+    <result column="doctorId" property="doctorId" jdbcType="INTEGER" />
+    <result column="answerValue" property="answerValue" jdbcType="VARCHAR" />
+    <result column="questionId" property="questionId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    answerId, doctorId, answerValue, questionId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from answer
+    where answerId = #{answerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from answer
+    where answerId = #{answerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tpkd.common.pojo.Answer" >
+    insert into answer (answerId, doctorId, answerValue, 
+      questionId)
+    values (#{answerId,jdbcType=INTEGER}, #{doctorId,jdbcType=INTEGER}, #{answerValue,jdbcType=VARCHAR}, 
+      #{questionId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tpkd.common.pojo.Answer" >
+    insert into answer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="answerId != null" >
+        answerId,
+      </if>
+      <if test="doctorId != null" >
+        doctorId,
+      </if>
+      <if test="answerValue != null" >
+        answerValue,
+      </if>
+      <if test="questionId != null" >
+        questionId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="answerId != null" >
+        #{answerId,jdbcType=INTEGER},
+      </if>
+      <if test="doctorId != null" >
+        #{doctorId,jdbcType=INTEGER},
+      </if>
+      <if test="answerValue != null" >
+        #{answerValue,jdbcType=VARCHAR},
+      </if>
+      <if test="questionId != null" >
+        #{questionId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tpkd.common.pojo.Answer" >
+    update answer
+    <set >
+      <if test="doctorId != null" >
+        doctorId = #{doctorId,jdbcType=INTEGER},
+      </if>
+      <if test="answerValue != null" >
+        answerValue = #{answerValue,jdbcType=VARCHAR},
+      </if>
+      <if test="questionId != null" >
+        questionId = #{questionId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where answerId = #{answerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tpkd.common.pojo.Answer" >
+    update answer
+    set doctorId = #{doctorId,jdbcType=INTEGER},
+      answerValue = #{answerValue,jdbcType=VARCHAR},
+      questionId = #{questionId,jdbcType=INTEGER}
+    where answerId = #{answerId,jdbcType=INTEGER}
+  </update>
+</mapper>

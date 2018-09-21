@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tpkd.common.mapper.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.tpkd.common.pojo.Order" >
+    <id column="orderId" property="orderId" jdbcType="INTEGER" />
+    <result column="doctorId" property="doctorId" jdbcType="INTEGER" />
+    <result column="userId" property="userId" jdbcType="INTEGER" />
+    <result column="totilPrice" property="totilPrice" jdbcType="INTEGER" />
+    <result column="serviceId" property="serviceId" jdbcType="INTEGER" />
+    <result column="payment" property="payment" jdbcType="INTEGER" />
+    <result column="payNo" property="payNo" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    orderId, doctorId, userId, totilPrice, serviceId, payment, payNo, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from order
+    where orderId = #{orderId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from order
+    where orderId = #{orderId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tpkd.common.pojo.Order" >
+    insert into order (orderId, doctorId, userId, 
+      totilPrice, serviceId, payment, 
+      payNo, status)
+    values (#{orderId,jdbcType=INTEGER}, #{doctorId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{totilPrice,jdbcType=INTEGER}, #{serviceId,jdbcType=INTEGER}, #{payment,jdbcType=INTEGER}, 
+      #{payNo,jdbcType=INTEGER}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tpkd.common.pojo.Order" >
+    insert into order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        orderId,
+      </if>
+      <if test="doctorId != null" >
+        doctorId,
+      </if>
+      <if test="userId != null" >
+        userId,
+      </if>
+      <if test="totilPrice != null" >
+        totilPrice,
+      </if>
+      <if test="serviceId != null" >
+        serviceId,
+      </if>
+      <if test="payment != null" >
+        payment,
+      </if>
+      <if test="payNo != null" >
+        payNo,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="doctorId != null" >
+        #{doctorId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="totilPrice != null" >
+        #{totilPrice,jdbcType=INTEGER},
+      </if>
+      <if test="serviceId != null" >
+        #{serviceId,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null" >
+        #{payment,jdbcType=INTEGER},
+      </if>
+      <if test="payNo != null" >
+        #{payNo,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tpkd.common.pojo.Order" >
+    update order
+    <set >
+      <if test="doctorId != null" >
+        doctorId = #{doctorId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        userId = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="totilPrice != null" >
+        totilPrice = #{totilPrice,jdbcType=INTEGER},
+      </if>
+      <if test="serviceId != null" >
+        serviceId = #{serviceId,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null" >
+        payment = #{payment,jdbcType=INTEGER},
+      </if>
+      <if test="payNo != null" >
+        payNo = #{payNo,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where orderId = #{orderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tpkd.common.pojo.Order" >
+    update order
+    set doctorId = #{doctorId,jdbcType=INTEGER},
+      userId = #{userId,jdbcType=INTEGER},
+      totilPrice = #{totilPrice,jdbcType=INTEGER},
+      serviceId = #{serviceId,jdbcType=INTEGER},
+      payment = #{payment,jdbcType=INTEGER},
+      payNo = #{payNo,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+    where orderId = #{orderId,jdbcType=INTEGER}
+  </update>
+</mapper>
