@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public User selectById(int id) {
 
-        redisUtil.set("user:"+id,rpcUserServices.selectById(id));
+        redisUtil.setForever("user:"+id,rpcUserServices.selectById(id));
         return rpcUserServices.selectById(id);
     }
 }
