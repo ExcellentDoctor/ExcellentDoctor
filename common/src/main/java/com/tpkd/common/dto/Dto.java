@@ -1,25 +1,29 @@
 package com.tpkd.common.dto;
 
 public class Dto <T>{
-    private String code;
-    private String message;
-    private String success="true";
+    //状态码
+    private String errorCode;
+    //消息
+    private String msg;
+    //状态
+    private String success;
+    //数据
     private T data;
 
-    public String getCode() {
-        return code;
+    public String getErrorCode() {
+        return errorCode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public String getSuccess() {

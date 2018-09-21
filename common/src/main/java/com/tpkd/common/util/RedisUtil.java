@@ -14,7 +14,7 @@ public class RedisUtil {
         return redisTemplate.opsForValue().get(key);
     }
     //添加redis值
-    public  boolean set(String key,String value){
+    public  boolean set(String key,Object value){
         redisTemplate.opsForValue().set("key",value);
         return true;
     }
