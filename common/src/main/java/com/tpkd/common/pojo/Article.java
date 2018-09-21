@@ -1,49 +1,58 @@
 package com.tpkd.common.pojo;
 
-public class Article {
-    //文章id
-    private int articleId;
-    //医生id
-    private int doctorId;
-    //阅读数量
-    private int readNumber;
-    //收藏数量
-    private int collectionNumber;
-    //标题
-    private String title;
-    //内容
-    private String articleValue;
-    //摘要
-    private String digest;
-    //一级标题
-    private int classificationIdFirstLevel;
-    //二级标题
-    private int classificationIdSecondLevel;
-    //三级标题
-    private int classificationIdThirdLevel;
+import java.io.Serializable;
 
-    public int getArticleId() {
+public class Article implements Serializable {
+    private Integer articleId;
+
+    private Integer doctorId;
+
+    private Integer readNumber;
+
+    private Integer collectionNumber;
+
+    private String title;
+
+    private String articleValue;
+
+    private String digest;
+
+    private Integer classificationIdFirstLevel;
+
+    private Integer classificationIdSecondLevel;
+
+    private Integer classificationIdThirdLevel;
+
+    public Integer getArticleId() {
         return articleId;
     }
 
-    public void setArticleId(int articleId) {
+    public void setArticleId(Integer articleId) {
         this.articleId = articleId;
     }
 
-    public int getDoctorId() {
+    public Integer getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(int doctorId) {
+    public void setDoctorId(Integer doctorId) {
         this.doctorId = doctorId;
     }
 
-    public int getReadNumber() {
+    public Integer getReadNumber() {
         return readNumber;
     }
 
-    public void setReadNumber(int readNumber) {
+    public void setReadNumber(Integer readNumber) {
         this.readNumber = readNumber;
+    }
+
+    public Integer getCollectionNumber() {
+        return collectionNumber;
+    }
+
+    public void setCollectionNumber(Integer collectionNumber) {
+        this.collectionNumber = collectionNumber;
     }
 
     public String getTitle() {
@@ -51,7 +60,7 @@ public class Article {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.title = title == null ? null : title.trim();
     }
 
     public String getArticleValue() {
@@ -59,7 +68,7 @@ public class Article {
     }
 
     public void setArticleValue(String articleValue) {
-        this.articleValue = articleValue;
+        this.articleValue = articleValue == null ? null : articleValue.trim();
     }
 
     public String getDigest() {
@@ -67,38 +76,30 @@ public class Article {
     }
 
     public void setDigest(String digest) {
-        this.digest = digest;
+        this.digest = digest == null ? null : digest.trim();
     }
 
-    public int getCollectionNumber() {
-        return collectionNumber;
-    }
-
-    public void setCollectionNumber(int collectionNumber) {
-        this.collectionNumber = collectionNumber;
-    }
-
-    public int getClassificationIdFirstLevel() {
+    public Integer getClassificationIdFirstLevel() {
         return classificationIdFirstLevel;
     }
 
-    public void setClassificationIdFirstLevel(int classificationIdFirstLevel) {
+    public void setClassificationIdFirstLevel(Integer classificationIdFirstLevel) {
         this.classificationIdFirstLevel = classificationIdFirstLevel;
     }
 
-    public int getClassificationIdSecondLevel() {
+    public Integer getClassificationIdSecondLevel() {
         return classificationIdSecondLevel;
     }
 
-    public void setClassificationIdSecondLevel(int classificationIdSecondLevel) {
+    public void setClassificationIdSecondLevel(Integer classificationIdSecondLevel) {
         this.classificationIdSecondLevel = classificationIdSecondLevel;
     }
 
-    public int getClassificationIdThirdLevel() {
+    public Integer getClassificationIdThirdLevel() {
         return classificationIdThirdLevel;
     }
 
-    public void setClassificationIdThirdLevel(int classificationIdThirdLevel) {
+    public void setClassificationIdThirdLevel(Integer classificationIdThirdLevel) {
         this.classificationIdThirdLevel = classificationIdThirdLevel;
     }
 }

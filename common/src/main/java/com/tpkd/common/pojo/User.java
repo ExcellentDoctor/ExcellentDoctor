@@ -3,24 +3,23 @@ package com.tpkd.common.pojo;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    //用户id
-    private int userId;
-    //手机号
-    private String phoneNumber;
-    //密码
-    private String password;
-    //用户昵称
-    private String userName;
-    //性别
-    private int sex;
-    //头像
-    private int imageId;
+    private Integer userId;
 
-    public int getUserId() {
+    private String phoneNumber;
+
+    private String password;
+
+    private String userName;
+
+    private Integer sex;
+
+    private Integer imageId;
+
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -29,7 +28,7 @@ public class User implements Serializable {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber == null ? null : phoneNumber.trim();
     }
 
     public String getPassword() {
@@ -37,7 +36,7 @@ public class User implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = password == null ? null : password.trim();
     }
 
     public String getUserName() {
@@ -45,22 +44,22 @@ public class User implements Serializable {
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.userName = userName == null ? null : userName.trim();
     }
 
-    public int getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 
-    public int getImageId() {
+    public Integer getImageId() {
         return imageId;
     }
 
-    public void setImageId(int imageId) {
+    public void setImageId(Integer imageId) {
         this.imageId = imageId;
     }
 }

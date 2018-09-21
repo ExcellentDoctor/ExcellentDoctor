@@ -15,7 +15,7 @@ public class RedisUtil {
     }
     //添加redis值
     public  boolean set(String key,Object value){
-        redisTemplate.opsForValue().set("key",value);
+        redisTemplate.opsForValue().set(key,value);
         return true;
     }
     //删除redis中的值

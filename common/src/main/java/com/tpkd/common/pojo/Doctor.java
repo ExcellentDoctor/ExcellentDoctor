@@ -1,6 +1,8 @@
 package com.tpkd.common.pojo;
 
-public class Doctor {
+import java.io.Serializable;
+
+public class Doctor implements Serializable {
     //医生id
     private int doctorId;
     //医生姓名

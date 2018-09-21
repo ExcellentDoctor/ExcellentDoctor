@@ -1,74 +1,85 @@
 package com.tpkd.common.pojo;
-//``orderId``doctorId``userId``totilPrice``serviceId``payment``STATUS``
-public class Order {
-    //订单id
-    private int orderId;
-    //医院id
-    private int doctorId;
-    //用户id
-    private int userId;
-    //总价格
-    private int totilPrice;
-    //服务id
-    private int serviceId;
-    //支付方式
-    private int payment;
-    //状态
-    private int status;
 
-    public int getOrderId() {
+import java.io.Serializable;
+
+public class Order implements Serializable {
+    private Integer orderId;
+
+    private Integer doctorId;
+
+    private Integer userId;
+
+    private Integer totilPrice;
+
+    private Integer serviceId;
+
+    private Integer payment;
+
+    private Integer payNo;
+
+    private Integer status;
+
+    public Integer getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(int orderId) {
+    public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
 
-    public int getDoctorId() {
+    public Integer getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(int doctorId) {
+    public void setDoctorId(Integer doctorId) {
         this.doctorId = doctorId;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public int getTotilPrice() {
+    public Integer getTotilPrice() {
         return totilPrice;
     }
 
-    public void setTotilPrice(int totilPrice) {
+    public void setTotilPrice(Integer totilPrice) {
         this.totilPrice = totilPrice;
     }
 
-    public int getServiceId() {
+    public Integer getServiceId() {
         return serviceId;
     }
 
-    public void setServiceId(int serviceId) {
+    public void setServiceId(Integer serviceId) {
         this.serviceId = serviceId;
     }
 
-    public int getPayment() {
+    public Integer getPayment() {
         return payment;
     }
 
-    public void setPayment(int payment) {
+    public void setPayment(Integer payment) {
         this.payment = payment;
     }
 
-    public int getStatus() {
+    public Integer getPayNo() {
+        return payNo;
+    }
+
+    public void setPayNo(Integer payNo) {
+        this.payNo = payNo;
+    }
+
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 }

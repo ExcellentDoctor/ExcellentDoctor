@@ -1,38 +1,39 @@
 package com.tpkd.common.pojo;
-//`commentId``doctorId``userId``commentValue``Satisfaction`
-public class Comment {
-    //评论id
-    private int commentId;
-    //医生id
-    private int doctorId;
-    //用户id
-    private int userId;
-    //评论内容
-    private String commentValue;
-    //满意等级1-5
-    private int Satisfaction;
 
-    public int getCommentId() {
+import java.io.Serializable;
+
+public class Comment implements Serializable {
+    private Integer commentId;
+
+    private Integer doctorId;
+
+    private Integer userId;
+
+    private String commentValue;
+
+    private Integer satisfaction;
+
+    public Integer getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(int commentId) {
+    public void setCommentId(Integer commentId) {
         this.commentId = commentId;
     }
 
-    public int getDoctorId() {
+    public Integer getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(int doctorId) {
+    public void setDoctorId(Integer doctorId) {
         this.doctorId = doctorId;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -41,14 +42,14 @@ public class Comment {
     }
 
     public void setCommentValue(String commentValue) {
-        this.commentValue = commentValue;
+        this.commentValue = commentValue == null ? null : commentValue.trim();
     }
 
-    public int getSatisfaction() {
-        return Satisfaction;
+    public Integer getSatisfaction() {
+        return satisfaction;
     }
 
-    public void setSatisfaction(int satisfaction) {
-        Satisfaction = satisfaction;
+    public void setSatisfaction(Integer satisfaction) {
+        this.satisfaction = satisfaction;
     }
 }

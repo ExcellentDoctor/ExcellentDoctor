@@ -1,24 +1,25 @@
 package com.tpkd.common.pojo;
 
-public class Hospital {
-    //医院id
-    private int hospitalId;
-    //医院名字
+import java.io.Serializable;
+
+public class Hospital implements Serializable {
+    private Integer hospitalId;
+
     private String hospitalName;
-    //医院等级
+
     private String hospitalLevel;
-    //医院地址
+
     private String address;
-    //医院介绍
+
     private String introduce;
-    //拥有的部门
+
     private String departmentId;
 
-    public int getHospitalId() {
+    public Integer getHospitalId() {
         return hospitalId;
     }
 
-    public void setHospitalId(int hospitalId) {
+    public void setHospitalId(Integer hospitalId) {
         this.hospitalId = hospitalId;
     }
 
@@ -27,7 +28,7 @@ public class Hospital {
     }
 
     public void setHospitalName(String hospitalName) {
-        this.hospitalName = hospitalName;
+        this.hospitalName = hospitalName == null ? null : hospitalName.trim();
     }
 
     public String getHospitalLevel() {
@@ -35,7 +36,7 @@ public class Hospital {
     }
 
     public void setHospitalLevel(String hospitalLevel) {
-        this.hospitalLevel = hospitalLevel;
+        this.hospitalLevel = hospitalLevel == null ? null : hospitalLevel.trim();
     }
 
     public String getAddress() {
@@ -43,7 +44,7 @@ public class Hospital {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.address = address == null ? null : address.trim();
     }
 
     public String getIntroduce() {
@@ -51,7 +52,7 @@ public class Hospital {
     }
 
     public void setIntroduce(String introduce) {
-        this.introduce = introduce;
+        this.introduce = introduce == null ? null : introduce.trim();
     }
 
     public String getDepartmentId() {
@@ -59,6 +60,6 @@ public class Hospital {
     }
 
     public void setDepartmentId(String departmentId) {
-        this.departmentId = departmentId;
+        this.departmentId = departmentId == null ? null : departmentId.trim();
     }
 }

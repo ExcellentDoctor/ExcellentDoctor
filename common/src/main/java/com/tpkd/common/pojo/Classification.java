@@ -1,20 +1,21 @@
 package com.tpkd.common.pojo;
 
-public class Classification {
-    //标题id
-    private int classificationId;
-    //标题内容
+import java.io.Serializable;
+
+public class Classification implements Serializable {
+    private Integer classificationId;
+
     private String classificationName;
-    //父级id
-    private int parentId;
-    //描述
+
+    private Integer parentId;
+
     private String describe;
 
-    public int getClassificationId() {
+    public Integer getClassificationId() {
         return classificationId;
     }
 
-    public void setClassificationId(int classificationId) {
+    public void setClassificationId(Integer classificationId) {
         this.classificationId = classificationId;
     }
 
@@ -23,14 +24,14 @@ public class Classification {
     }
 
     public void setClassificationName(String classificationName) {
-        this.classificationName = classificationName;
+        this.classificationName = classificationName == null ? null : classificationName.trim();
     }
 
-    public int getParentId() {
+    public Integer getParentId() {
         return parentId;
     }
 
-    public void setParentId(int parentId) {
+    public void setParentId(Integer parentId) {
         this.parentId = parentId;
     }
 
@@ -39,6 +40,6 @@ public class Classification {
     }
 
     public void setDescribe(String describe) {
-        this.describe = describe;
+        this.describe = describe == null ? null : describe.trim();
     }
 }

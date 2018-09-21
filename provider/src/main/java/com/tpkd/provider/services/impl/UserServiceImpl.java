@@ -14,6 +14,6 @@ public class UserServiceImpl implements RpcUserServices {
     private UserMapper userMapper;
     @Override
     public User selectById(int id) {
-       return  userMapper.selectById(id);
+       return  userMapper.selectByPrimaryKey(id);
     }
 }

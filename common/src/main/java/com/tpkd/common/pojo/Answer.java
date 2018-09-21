@@ -1,28 +1,29 @@
 package com.tpkd.common.pojo;
 
-public class Answer {
-    //回答id
-    private int answerId;
-    //医生id
-    private int doctorId;
-    //回答内容
-    private String answerValue;
-    //图片
-    private int imageId;
+import java.io.Serializable;
 
-    public int getAnswerId() {
+public class Answer implements Serializable {
+    private Integer answerId;
+
+    private Integer doctorId;
+
+    private String answerValue;
+
+    private Integer questionId;
+
+    public Integer getAnswerId() {
         return answerId;
     }
 
-    public void setAnswerId(int answerId) {
+    public void setAnswerId(Integer answerId) {
         this.answerId = answerId;
     }
 
-    public int getDoctorId() {
+    public Integer getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(int doctorId) {
+    public void setDoctorId(Integer doctorId) {
         this.doctorId = doctorId;
     }
 
@@ -31,7 +32,14 @@ public class Answer {
     }
 
     public void setAnswerValue(String answerValue) {
-        this.answerValue = answerValue;
+        this.answerValue = answerValue == null ? null : answerValue.trim();
     }
 
+    public Integer getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(Integer questionId) {
+        this.questionId = questionId;
+    }
 }
