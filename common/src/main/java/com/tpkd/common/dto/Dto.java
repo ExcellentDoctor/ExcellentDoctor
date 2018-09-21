@@ -1,6 +1,8 @@
 package com.tpkd.common.dto;
 
-public class Dto <T>{
+import java.io.Serializable;
+
+public class Dto <T> implements Serializable {
     //状态码
     private String errorCode;
     //消息

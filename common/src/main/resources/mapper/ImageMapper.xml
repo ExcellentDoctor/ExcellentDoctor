@@ -55,4 +55,7 @@
     set imageUrl = #{imageUrl,jdbcType=VARCHAR}
     where imageId = #{imageId,jdbcType=INTEGER}
   </update>
+  <insert id="insertImage" parameterType="com.tpkd.common.pojo.Image" useGeneratedKeys="true" keyProperty="imageId">
+    INSERT INTO `image`(`imageUrl`) VALUES(#{imageUrl})
+  </insert>
 </mapper>
