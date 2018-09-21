@@ -28,7 +28,7 @@ public class Doctor {
     //擅长
     private String goodAt;
     //图片
-    private String photoImage;
+    private int imageId;
 
     public int getDoctorId() {
         return doctorId;
@@ -134,11 +134,11 @@ public class Doctor {
         this.goodAt = goodAt;
     }
 
-    public String getPhotoImage() {
-        return photoImage;
+    public int getImageId() {
+        return imageId;
     }
 
-    public void setPhotoImage(String photoImage) {
-        this.photoImage = photoImage;
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 }

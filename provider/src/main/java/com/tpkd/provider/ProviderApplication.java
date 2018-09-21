@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @MapperScan("com.tpkd.common.mapper")
 public class ProviderApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(ProviderApplication.class, args);
     }

@@ -7,6 +7,8 @@ public class Answer {
     private int doctorId;
     //回答内容
     private String answerValue;
+    //图片
+    private int imageId;
 
     public int getAnswerId() {
         return answerId;
@@ -31,4 +33,5 @@ public class Answer {
     public void setAnswerValue(String answerValue) {
         this.answerValue = answerValue;
     }
+
 }

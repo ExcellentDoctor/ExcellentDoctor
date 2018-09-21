@@ -4,6 +4,8 @@ public class Question {
     private int questionId;
     private int userId;
     private String questionValue;
+    //图片
+    private int imageId;
 
     public int getQuestionId() {
         return questionId;
@@ -27,5 +29,13 @@ public class Question {
 
     public void setQuestionValue(String questionValue) {
         this.questionValue = questionValue;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 }

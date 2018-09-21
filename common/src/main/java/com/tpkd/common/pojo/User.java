@@ -14,7 +14,7 @@ public class User implements Serializable {
     //性别
     private int sex;
     //头像
-    private String photoImage;
+    private int imageId;
 
     public int getUserId() {
         return userId;
@@ -56,11 +56,11 @@ public class User implements Serializable {
         this.sex = sex;
     }
 
-    public String getPhotoImage() {
-        return photoImage;
+    public int getImageId() {
+        return imageId;
     }
 
-    public void setPhotoImage(String photoImage) {
-        this.photoImage = photoImage;
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 }
