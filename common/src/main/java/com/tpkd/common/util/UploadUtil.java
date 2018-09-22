@@ -9,11 +9,15 @@ public class UploadUtil {
     public  String  getUrl(MultipartFile file,String path) throws IOException {
         String fileName = file.getOriginalFilename();
         File targetFile = new File(path);
-        if (!targetFile.exists()) {
-            targetFile.mkdirs();
+        String suffer=fileName.substring(fileName.indexOf(".")+1);
+        if(suffer.equals("jpg")||suffer.equals("jpeg")) {
+            if (!targetFile.exists()) {
+                targetFile.mkdirs();
+            }
+            file.transferTo(new File(targetFile, fileName));
+            String filePath = path + "/" + fileName;
+            return filePath;
         }
-        file.transferTo(new File(targetFile, fileName));
-        String filePath = path + "/" + fileName;
-        return filePath;
+        return "notok";
     }
 }
