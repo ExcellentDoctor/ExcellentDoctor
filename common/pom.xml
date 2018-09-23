@@ -56,16 +56,22 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>2.0.4.RELEASE</version>
         </dependency>
-
-
-
         <!--腾讯云SMS短信服务jar-->
         <dependency>
             <groupId>com.github.qcloudsms</groupId>
             <artifactId>qcloudsms</artifactId>
             <version>1.0.5</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.3.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-solr</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
