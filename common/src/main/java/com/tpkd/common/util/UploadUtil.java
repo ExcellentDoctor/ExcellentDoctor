@@ -4,8 +4,14 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author jyk
+ */
 @Component
 public class UploadUtil {
+
+    public final static String TypeFail = "typeFail";
+
     public  String  getUrl(MultipartFile file,String path) throws IOException {
         String fileName = file.getOriginalFilename();
         File targetFile = new File(path);
@@ -18,6 +24,6 @@ public class UploadUtil {
             String filePath = path + "/" + fileName;
             return filePath;
         }
-        return "notok";
+        return TypeFail;
     }
 }

@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * @author jyk
+ */
 @Component
 public class MD5Utils {
 

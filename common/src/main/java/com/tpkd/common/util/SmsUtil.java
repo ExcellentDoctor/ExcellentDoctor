@@ -9,6 +9,9 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.Random;
 
+/**
+ * @author jyk
+ */
 @Component
 public class SmsUtil {
 

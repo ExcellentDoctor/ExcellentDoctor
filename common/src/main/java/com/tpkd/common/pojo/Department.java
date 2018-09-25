@@ -1,9 +1,14 @@
 package com.tpkd.common.pojo;
 
-public class Department {
+import java.io.Serializable;
+
+public class Department implements Serializable {
     private int departmentId;
+
     private String departmentName;
+
     private int parentId;
+
     private String departmentMessage;
 
     public int getDepartmentId() {

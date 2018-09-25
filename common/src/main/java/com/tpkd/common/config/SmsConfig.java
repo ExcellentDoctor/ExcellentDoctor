@@ -5,6 +5,9 @@ import com.github.qcloudsms.SmsSingleSender;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author jyk
+ */
 @Configuration
 public class SmsConfig {
 
