@@ -8,7 +8,7 @@ public class Doctor implements Serializable {
     //医生姓名
     private String doctorName;
     //部门编号
-    private int departmentId;
+    private String departmentId;
     //提供服务
     private String services;
     //服务价格
@@ -48,11 +48,11 @@ public class Doctor implements Serializable {
         this.doctorName = doctorName;
     }
 
-    public int getDepartmentId() {
+    public String getDepartmentId() {
         return departmentId;
     }
 
-    public void setDepartmentId(int departmentId) {
+    public void setDepartmentId(String departmentId) {
         this.departmentId = departmentId;
     }
 

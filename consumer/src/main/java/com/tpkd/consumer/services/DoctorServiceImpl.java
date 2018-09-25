@@ -1,6 +1,9 @@
 package com.tpkd.consumer.services;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.tpkd.common.dto.Dto;
+import com.tpkd.common.pojo.Doctor;
+import com.tpkd.common.services.RpcDoctorService;
 import com.tpkd.common.util.DtoUtil;
 import com.tpkd.common.util.EmptyUtil;
 import com.tpkd.common.vo.doctor.DoctorMessageVo;
@@ -10,10 +13,13 @@ import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class DoctorServiceImpl implements DoctorService{
+    @Reference
+    private RpcDoctorService rpcDoctorService;
     private HttpSolrClient httpSolrClient=new HttpSolrClient("http://localhost:8180/solr/doctor");
     @Override
     public Dto selectDoctor(DoctorSelectVo doctorSelectVo) {
@@ -42,5 +48,14 @@ public class DoctorServiceImpl implements DoctorService{
         }
         List<DoctorMessageVo> list=response.getBeans(DoctorMessageVo.class);
         return DtoUtil.getSuccess("成功获取",list);
+    }
+
+    @Override
+    public Dto selectDoctorMessage(Integer doctorId) {
+        Doctor doctor=rpcDoctorService.selectDoctorMessage(doctorId);
+        if(EmptyUtil.isEmpty(doctor)){
+            return DtoUtil.getFailed("获取信息失败","1001");
+        }
+        return DtoUtil.getSuccess("获取信息成功",doctor);
     }
 }
