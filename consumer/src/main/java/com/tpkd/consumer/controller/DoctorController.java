@@ -14,9 +14,7 @@ public class DoctorController {
     @Resource
     private DoctorService doctorService;
     @RequestMapping("selectDoctor")
-    public Dto selectDoctor(){
-//        @RequestBody DoctorSelectVo doctorSelectVo
-        DoctorSelectVo doctorSelectVo=new DoctorSelectVo();
+    public Dto selectDoctor(@RequestBody DoctorSelectVo doctorSelectVo){
         return doctorService.selectDoctor(doctorSelectVo);
     }
 }
