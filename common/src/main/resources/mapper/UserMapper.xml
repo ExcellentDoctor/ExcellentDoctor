@@ -18,7 +18,16 @@
     from user
     where userId = #{userId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+
+    <select id="loginByPhone" resultType="com.tpkd.common.pojo.User" parameterType="com.tpkd.common.vo.user.LoginVo">
+      select
+      <include refid="Base_Column_List" />
+      from user
+      where phoneNumber = #{phoneNumber} AND password = #{password}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user
     where userId = #{userId,jdbcType=INTEGER}
   </delete>

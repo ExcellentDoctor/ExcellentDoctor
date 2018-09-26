@@ -5,7 +5,9 @@ import com.github.qcloudsms.SmsSingleSender;
 import com.tpkd.common.mapper.UserMapper;
 import com.tpkd.common.pojo.User;
 import com.tpkd.common.services.RpcUserServices;
+import com.tpkd.common.util.EmptyUtil;
 import com.tpkd.common.util.SmsUtil;
+import com.tpkd.common.vo.user.LoginVo;
 import com.tpkd.common.vo.user.RegisterVo;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +33,12 @@ public class UserServiceImpl implements RpcUserServices {
         user.setPassword(registerVo.getPassword());
         user.setSex(registerVo.getSex());
         return userMapper.insertSelective(user) > 1;
+    }
+
+    @Override
+    public User login(LoginVo loginVo) {
+        User user = userMapper.loginByPhone(loginVo);
+        return user;
     }
 
 

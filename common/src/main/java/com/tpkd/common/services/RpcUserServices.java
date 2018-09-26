@@ -1,6 +1,7 @@
 package com.tpkd.common.services;
 
 import com.tpkd.common.pojo.User;
+import com.tpkd.common.vo.user.LoginVo;
 import com.tpkd.common.vo.user.RegisterVo;
 
 /**
@@ -14,5 +15,7 @@ public interface RpcUserServices {
      * @return
      */
     Boolean addUser(RegisterVo registerVo);
+
+    User login(LoginVo loginVo);
 
 }

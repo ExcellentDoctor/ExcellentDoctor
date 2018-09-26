@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author jyk
+ */
 @Component
 public class RedisUtil {
     @Resource
@@ -55,4 +58,17 @@ public class RedisUtil {
         redisTemplate.delete(key);
         return true;
     }
+
+
+    public boolean isexist(String key) {
+        try {
+            if (redisTemplate.hasKey(key)){
+                return true;
+            }
+        }catch (Exception e){
+            return false;
+        }
+        return false;
+    }
+
 }
