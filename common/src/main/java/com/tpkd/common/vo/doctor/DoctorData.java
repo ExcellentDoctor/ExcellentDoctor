@@ -1,18 +1,15 @@
 package com.tpkd.common.vo.doctor;
 
-import java.io.Serializable;
-
-public class DoctorDetailedMessage implements Serializable {
+public class DoctorData {
     private int doctorId;
     private String doctorName;
     private String hospitalName;
     private String professionalTitle;
     private String departmentName;
-    private String introduce;
-    private String goodAt;
-    private String medicalBackground;
-    private String honnor;
     private String imageUrl;
+    private int serviceNumber;
+    private int countNumber;
+    private int recommend;
 
     public int getDoctorId() {
         return doctorId;
@@ -54,43 +51,35 @@ public class DoctorDetailedMessage implements Serializable {
         this.departmentName = departmentName;
     }
 
-    public String getIntroduce() {
-        return introduce;
-    }
-
-    public void setIntroduce(String introduce) {
-        this.introduce = introduce;
-    }
-
-    public String getGoodAt() {
-        return goodAt;
-    }
-
-    public void setGoodAt(String goodAt) {
-        this.goodAt = goodAt;
-    }
-
-    public String getMedicalBackground() {
-        return medicalBackground;
-    }
-
-    public void setMedicalBackground(String medicalBackground) {
-        this.medicalBackground = medicalBackground;
-    }
-
-    public String getHonnor() {
-        return honnor;
-    }
-
-    public void setHonnor(String honnor) {
-        this.honnor = honnor;
-    }
-
     public String getImageUrl() {
         return imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public int getServiceNumber() {
+        return serviceNumber;
+    }
+
+    public void setServiceNumber(int serviceNumber) {
+        this.serviceNumber = serviceNumber;
+    }
+
+    public int getCountNumber() {
+        return countNumber;
+    }
+
+    public void setCountNumber(int countNumber) {
+        this.countNumber = countNumber;
+    }
+
+    public int getRecommend() {
+        return recommend;
+    }
+
+    public void setRecommend(int recommend) {
+        this.recommend = recommend;
     }
 }

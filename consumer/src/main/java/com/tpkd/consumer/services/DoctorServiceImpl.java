@@ -6,6 +6,8 @@ import com.tpkd.common.pojo.Doctor;
 import com.tpkd.common.services.RpcDoctorService;
 import com.tpkd.common.util.DtoUtil;
 import com.tpkd.common.util.EmptyUtil;
+import com.tpkd.common.vo.doctor.DoctorData;
+import com.tpkd.common.vo.doctor.DoctorDetailedMessage;
 import com.tpkd.common.vo.doctor.DoctorMessageVo;
 import com.tpkd.common.vo.doctor.DoctorSelectVo;
 import org.apache.solr.client.solrj.SolrQuery;
@@ -52,10 +54,19 @@ public class DoctorServiceImpl implements DoctorService{
 
     @Override
     public Dto selectDoctorMessage(Integer doctorId) {
-        Doctor doctor=rpcDoctorService.selectDoctorMessage(doctorId);
+        DoctorDetailedMessage doctor=rpcDoctorService.selectDoctorMessage(doctorId);
         if(EmptyUtil.isEmpty(doctor)){
             return DtoUtil.getFailed("获取信息失败","1001");
         }
         return DtoUtil.getSuccess("获取信息成功",doctor);
+    }
+
+    @Override
+    public Dto selectDoctorData(Integer doctorId) {
+        DoctorData doctorData=rpcDoctorService.selectDoctorData(doctorId);
+        if(EmptyUtil.isEmpty(doctorData)){
+            return DtoUtil.getFailed("获取信息失败","1001");
+        }
+        return DtoUtil.getSuccess("获取信息成功",doctorData);
     }
 }

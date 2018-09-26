@@ -9,4 +9,5 @@ public interface DepartmentMapper {
 
     List<Department> findNextDep(Department department);
 
+    Department selectById(int departmentId);
 }

@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.tpkd.*")
 @MapperScan("com.tpkd.common.mapper")
 public class ConsumerApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(ConsumerApplication.class, args);
     }

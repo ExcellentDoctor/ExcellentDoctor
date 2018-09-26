@@ -1,5 +1,7 @@
 package com.tpkd.common.mapper;
 
-public interface DoctorMapper {
+import com.tpkd.common.pojo.Doctor;
 
+public interface DoctorMapper {
+    Doctor selectDoctorById(int doctorId);
 }

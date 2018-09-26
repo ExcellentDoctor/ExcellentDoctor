@@ -25,8 +25,18 @@ public class DoctorController {
         return doctorService.selectDoctor(doctorSelectVo);
     }
 
+    /**
+     * 查询医生详情
+     * @param doctorId
+     * @return
+     */
     @RequestMapping("selectDoctorMessage/{doctorId}")
     public Dto selectDoctorMessage(@PathVariable Integer doctorId){
+        return doctorService.selectDoctorMessage(doctorId);
+    }
+
+    @RequestMapping("selectDoctorData/{doctorId}")
+    public Dto selectDoctorData(@PathVariable Integer doctorId){
         return new Dto();
     }
 }

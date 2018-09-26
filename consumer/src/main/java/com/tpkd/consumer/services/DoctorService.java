@@ -7,4 +7,5 @@ import com.tpkd.common.vo.doctor.DoctorSelectVo;
 public interface DoctorService {
     Dto selectDoctor(DoctorSelectVo doctorSelectVo);
     Dto selectDoctorMessage(Integer doctorId);
+    Dto selectDoctorData(Integer doctorId);
 }
