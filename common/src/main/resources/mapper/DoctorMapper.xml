@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.tpkd.common.mapper.DoctorMapper" >
-
+  <sql id="Base_Column_List" >
+    doctorId,doctorName,departmentId,services,prices,serviceNumber,hospitalId,evaluation,professionalTitle,recomment,
+medicalbBackground,honor,goodAt,imageId
+  </sql>
+  <select id="selectDoctorById" resultType="com.tpkd.common.pojo.Doctor">
+      SELECT `doctorId`,`doctorName`,`serviceNumber`,`recommend`,`evaluation`,`departmentId`,`hospitalId`,`professionalTitle`,`goodAt`,`imageId`,`honor`,`medicalBackground` FROM `doctor` WHERE `doctorId`=#{doctorId}
+  </select>
 </mapper>

@@ -23,10 +23,10 @@ public class Doctor implements Serializable {
     private int recommend;
     //职称
     private String professionalTitle;
-    //医学背景
-    private String medicalbBackground;
+    //医学背景medicalBackground``honor`
+    private String medicalBackground;
     //个人荣誉
-    private String honner;
+    private String honor;
     //擅长
     private String goodAt;
     //图片
@@ -112,20 +112,20 @@ public class Doctor implements Serializable {
         this.professionalTitle = professionalTitle;
     }
 
-    public String getMedicalbBackground() {
-        return medicalbBackground;
+    public String getMedicalBackground() {
+        return medicalBackground;
     }
 
-    public void setMedicalbBackground(String medicalbBackground) {
-        this.medicalbBackground = medicalbBackground;
+    public void setMedicalBackground(String medicalBackground) {
+        this.medicalBackground = medicalBackground;
     }
 
-    public String getHonner() {
-        return honner;
+    public String getHonor() {
+        return honor;
     }
 
-    public void setHonner(String honner) {
-        this.honner = honner;
+    public void setHonor(String honor) {
+        this.honor = honor;
     }
 
     public String getGoodAt() {

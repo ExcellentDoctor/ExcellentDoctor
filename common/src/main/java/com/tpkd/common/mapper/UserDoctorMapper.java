@@ -6,4 +6,6 @@ public interface UserDoctorMapper {
     int insert(UserDoctor record);
 
     int insertSelective(UserDoctor record);
+
+    int selectCount(Integer doctorId);
 }
