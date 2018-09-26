@@ -1,20 +1,17 @@
 package com.tpkd.provider.services.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.github.qcloudsms.SmsSingleSender;
 import com.tpkd.common.mapper.UserMapper;
 import com.tpkd.common.pojo.User;
-import com.tpkd.common.services.RpcUserServices;
-import com.tpkd.common.util.EmptyUtil;
-import com.tpkd.common.util.SmsUtil;
+import com.tpkd.common.services.RpcUserService;
 import com.tpkd.common.vo.user.LoginVo;
 import com.tpkd.common.vo.user.RegisterVo;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 @Component
-@Service(interfaceClass = RpcUserServices.class)
-public class UserServiceImpl implements RpcUserServices {
+@Service(interfaceClass = RpcUserService.class)
+public class UserServiceImpl implements RpcUserService {
     @Resource
     private UserMapper userMapper;
 
@@ -39,6 +36,11 @@ public class UserServiceImpl implements RpcUserServices {
     public User login(LoginVo loginVo) {
         User user = userMapper.loginByPhone(loginVo);
         return user;
+    }
+
+    @Override
+    public User findById(Integer id) {
+        return userMapper.selectByPrimaryKey(id);
     }
 
 

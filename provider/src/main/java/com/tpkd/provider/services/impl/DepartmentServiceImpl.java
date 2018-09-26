@@ -4,7 +4,6 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.tpkd.common.mapper.DepartmentMapper;
 import com.tpkd.common.pojo.Department;
 import com.tpkd.common.services.RpcDepartmentService;
-import com.tpkd.common.services.RpcUserServices;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

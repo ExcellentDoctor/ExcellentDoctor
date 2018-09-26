@@ -2,7 +2,7 @@ package com.tpkd.consumer.services.impl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.tpkd.common.pojo.User;
-import com.tpkd.common.services.RpcUserServices;
+import com.tpkd.common.services.RpcUserService;
 import com.tpkd.common.util.SmsUtil;
 import com.tpkd.common.vo.user.LoginVo;
 import com.tpkd.common.vo.user.RegisterVo;
@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 public class UserServiceImpl implements UserService {
 
     @Reference
-    private RpcUserServices rpcUserServices;
+    private RpcUserService rpcUserService;
 
     @Resource
     private SmsUtil smsUtil;
@@ -31,12 +31,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean addUser(RegisterVo registerVo) {
-        return rpcUserServices.addUser(registerVo);
+        return rpcUserService.addUser(registerVo);
     }
 
     @Override
     public User login(LoginVo loginVo) {
-        return rpcUserServices.login(loginVo);
+        return rpcUserService.login(loginVo);
     }
 
 }

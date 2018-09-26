@@ -1,8 +1,13 @@
 package com.tpkd.common.pojo;
 
 import java.io.Serializable;
+import java.util.Date;
 
+/**
+ * @author jyk
+ */
 public class Comment implements Serializable {
+    
     private Integer commentId;
 
     private Integer doctorId;
@@ -12,6 +17,8 @@ public class Comment implements Serializable {
     private String commentValue;
 
     private Integer satisfaction;
+
+    private Date createDate;
 
     public Integer getCommentId() {
         return commentId;
@@ -51,5 +58,13 @@ public class Comment implements Serializable {
 
     public void setSatisfaction(Integer satisfaction) {
         this.satisfaction = satisfaction;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 }

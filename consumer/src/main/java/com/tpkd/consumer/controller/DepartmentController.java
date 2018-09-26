@@ -24,6 +24,10 @@ public class DepartmentController {
     @Resource
     private RedisUtil redisUtil;
 
+    /**
+     * 查询所有
+     * @return
+     */
     @RequestMapping(value = "/findDep",method = RequestMethod.POST)
     public Dto findDep(){
         final String REDIS_KEY = "DepartmentList";
@@ -43,5 +47,9 @@ public class DepartmentController {
         }
         return DtoUtil.getSuccess(map);
     }
+
+
+
+
 
 }
