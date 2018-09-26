@@ -37,6 +37,6 @@ public class DoctorController {
 
     @RequestMapping("selectDoctorData/{doctorId}")
     public Dto selectDoctorData(@PathVariable Integer doctorId){
-        return doctorService.selectDoctorData(doctorId);
+        return new Dto();
     }
 }
