@@ -8,4 +8,8 @@ public interface UserDoctorMapper {
     int insertSelective(UserDoctor record);
 
     int selectCount(Integer doctorId);
+
+    UserDoctor selectById(UserDoctor userDoctor);
+
+    int delete(UserDoctor userDoctor);
 }

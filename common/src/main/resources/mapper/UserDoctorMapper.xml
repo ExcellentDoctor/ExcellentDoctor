@@ -31,4 +31,10 @@
   <select id="selectCount" resultType="int">
     SELECT COUNT(1) FROM `userdoctor` WHERE `doctorId`=#{doctorId}
   </select>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="com.tpkd.common.pojo.UserDoctor">
+    SELECT `userId`,`doctorId` FROM `userdoctor` WHERE `userId`=#{userId} AND `doctorId`=#{doctorId}
+  </select>
+<delete id="delete" parameterType="com.tpkd.common.pojo.UserDoctor">
+  DELETE FROM `userdoctor` WHERE `userId`=#{userId} and `doctorId`=#{doctorId}
+</delete>
 </mapper>

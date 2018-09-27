@@ -4,14 +4,13 @@ package com.tpkd.consumer.controller;
 import com.tpkd.common.dto.Dto;
 import com.tpkd.common.pojo.Image;
 import com.tpkd.common.pojo.User;
+import com.tpkd.common.pojo.UserDoctor;
 import com.tpkd.common.util.*;
 import com.tpkd.common.vo.user.LoginVo;
 import com.tpkd.common.vo.user.RegisterVo;
+import com.tpkd.consumer.services.UserDoctorService;
 import com.tpkd.consumer.services.UserService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +34,9 @@ public class UserController {
 
     @Resource
     private UploadUtil uploadUtil;
+
+    @Resource
+    private UserDoctorService userDoctorService;
     /**
      * 短信验证码验证是否正确的注册
      * @param registerVo
@@ -102,4 +104,30 @@ public class UserController {
     }
 
 
+    @RequestMapping("/existsfocus/{doctorId}")
+    public Dto existsFocus(@PathVariable Integer doctorId, HttpServletRequest request){
+        String token=request.getHeader("token");
+        if(token!=null){
+            String userId=token.split("-")[2];
+            UserDoctor userDoctor=new UserDoctor();
+            userDoctor.setDoctorId(doctorId);
+            userDoctor.setUserId(Integer.valueOf(userId));
+            return userDoctorService.selectUserAndDoctor(userDoctor);
+        }else{
+            return DtoUtil.getFailed("未登录","1001");
+        }
+    }
+    @RequestMapping("/focus/{doctorId}")
+    public Dto focus(@PathVariable Integer doctorId, HttpServletRequest request){
+        String token=request.getHeader("token");
+        if(token!=null){
+            String userId=token.split("-")[2];
+            UserDoctor userDoctor=new UserDoctor();
+            userDoctor.setDoctorId(doctorId);
+            userDoctor.setUserId(Integer.valueOf(userId));
+            return userDoctorService.insertOrDeleteFocus(userDoctor);
+        }else{
+            return DtoUtil.getFailed("未登录","1001");
+        }
+    }
 }
