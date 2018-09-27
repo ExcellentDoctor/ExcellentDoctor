@@ -25,4 +25,7 @@
         FROM `department`
         WHERE parentId = #{parentId}
     </select>
+    <select id="selectById" resultMap="BaseResultMap">
+      SELECT * FROM `department` WHERE `departmentId`=#{departmentId}
+    </select>
 </mapper>

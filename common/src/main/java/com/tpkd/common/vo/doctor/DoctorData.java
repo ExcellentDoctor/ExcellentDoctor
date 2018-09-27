@@ -1,6 +1,8 @@
 package com.tpkd.common.vo.doctor;
 
-public class DoctorData {
+import java.io.Serializable;
+
+public class DoctorData implements Serializable {
     private int doctorId;
     private String doctorName;
     private String hospitalName;

@@ -8,4 +8,5 @@ public interface DoctorService {
     Dto selectDoctor(DoctorSelectVo doctorSelectVo);
     Dto selectDoctorMessage(Integer doctorId);
     Dto selectDoctorData(Integer doctorId);
+    Dto selectDoctorPay(Integer doctorId);
 }

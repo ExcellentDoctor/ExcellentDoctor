@@ -6,6 +6,6 @@
 medicalbBackground,honor,goodAt,imageId
   </sql>
   <select id="selectDoctorById" resultType="com.tpkd.common.pojo.Doctor">
-      SELECT `doctorId`,`doctorName`,`serviceNumber`,`recommend`,`evaluation`,`departmentId`,`hospitalId`,`professionalTitle`,`goodAt`,`imageId`,`honor`,`medicalBackground` FROM `doctor` WHERE `doctorId`=#{doctorId}
+      SELECT `doctorId`,`doctorName`,`serviceNumber`,`recommend`,`evaluation`,`departmentId`,`hospitalId`,`professionalTitle`,`goodAt`,`imageId`,`honor`,`medicalBackground`,`prices`,`services` FROM `doctor` WHERE `doctorId`=#{doctorId}
   </select>
 </mapper>
