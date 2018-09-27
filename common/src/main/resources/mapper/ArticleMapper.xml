@@ -150,4 +150,19 @@
       classificationIdThirdLevel = #{classificationIdThirdLevel,jdbcType=INTEGER}
     where articleId = #{articleId,jdbcType=INTEGER}
   </update>
+  <select id="selectByClassificationId" parameterType="com.tpkd.common.vo.article.ArticleTitleVo" resultMap="BaseResultMap">
+    SELECT `articleId`,`doctorId`,`readNumber`,`collectionNumber`,`title`,`articleValue`,`digest`,`classificationIdFirstLevel`,`classificationIdSecondLevel`,`classificationIdThirdLevel`
+    FROM `article`
+    <where>
+      <if test="classificationIdFirstLevel!=null and classificationIdFirstLevel!=''">
+        AND  `classificationIdFirstLevel`=#{classificationIdFirstLevel}
+      </if>
+      <if test="classificationIdSecondLevel!=null and classificationIdSecondLevel!=''">
+        AND  `classificationIdSecondLevel`=#{classificationIdSecondLevel}
+      </if>
+      <if test="classificationIdThirdLevel!=null and classificationIdThirdLevel!=''">
+        AND  `classificationIdThirdLevel`=#{classificationIdThirdLevel}
+      </if>
+    </where>
+  </select>
 </mapper>
